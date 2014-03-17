@@ -73,7 +73,7 @@ namespace Calender {
 			this->label1->Size = System::Drawing::Size(58, 13);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Username:";
-			this->label1->Click += gcnew System::EventHandler(this, &login_form::label1_Click);
+//			this->label1->Click += gcnew System::EventHandler(this, &login_form::label1_Click);
 			// 
 			// textBox1
 			// 
