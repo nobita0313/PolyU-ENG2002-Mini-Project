@@ -1,4 +1,4 @@
-﻿Build started 3/26/2014 3:25:15 AM.
+﻿Build started 3/26/2014 3:32:17 AM.
      1>Project "T:\workspace\Visual Studio\C++\PolyU-ENG2002-Mini-Project\main\Calender\Calender\Calender.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Calender.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -22,4 +22,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:07.39
+Time Elapsed 00:00:00.61
