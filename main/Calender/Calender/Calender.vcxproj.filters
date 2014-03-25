@@ -53,6 +53,12 @@
     <ClInclude Include="registration_form.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Days.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Months.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -63,5 +69,19 @@
     <EmbeddedResource Include="Form1.resX">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
+    <EmbeddedResource Include="login_form.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="registration_form.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Days.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="Months.lib">
+      <Filter>Source Files</Filter>
+    </Library>
   </ItemGroup>
 </Project>
