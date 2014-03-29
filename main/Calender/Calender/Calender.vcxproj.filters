@@ -21,9 +21,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Calender.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AssemblyInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -34,6 +31,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="registration_form.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Calendar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Calender {
+namespace Calendar {
 
 	using namespace System;
 	using namespace System::ComponentModel;
