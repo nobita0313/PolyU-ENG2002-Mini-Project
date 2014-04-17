@@ -1,13 +1,17 @@
 #pragma once
+#include <fstream>
+#include <string.h>
 
 namespace Calendar {
-
+	using namespace std;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Runtime::InteropServices;
+
 
 	/// <summary>
 	/// Summary for registration_form
@@ -15,8 +19,9 @@ namespace Calendar {
 	public ref class registration_form : public System::Windows::Forms::Form
 	{
 	public:
-		registration_form(void)
+		registration_form(System::Windows::Forms::Form ^ Form)
 		{
+			LForm = Form;
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -34,6 +39,7 @@ namespace Calendar {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Form ^ LForm;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::TextBox^  textBox1;
 	private: System::Windows::Forms::Label^  label2;
@@ -70,7 +76,7 @@ namespace Calendar {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(49, 20);
+			this->label1->Location = System::Drawing::Point(51, 20);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(58, 13);
 			this->label1->TabIndex = 0;
@@ -78,7 +84,8 @@ namespace Calendar {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(50, 36);
+			this->textBox1->Location = System::Drawing::Point(52, 36);
+			this->textBox1->MaxLength = 15;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(180, 20);
 			this->textBox1->TabIndex = 1;
@@ -86,7 +93,7 @@ namespace Calendar {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(49, 68);
+			this->label2->Location = System::Drawing::Point(51, 68);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(56, 13);
 			this->label2->TabIndex = 2;
@@ -94,15 +101,17 @@ namespace Calendar {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(50, 84);
+			this->textBox2->Location = System::Drawing::Point(52, 84);
+			this->textBox2->MaxLength = 15;
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(180, 20);
 			this->textBox2->TabIndex = 3;
+			this->textBox2->UseSystemPasswordChar = true;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(49, 116);
+			this->label3->Location = System::Drawing::Point(51, 116);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(94, 13);
 			this->label3->TabIndex = 4;
@@ -110,28 +119,32 @@ namespace Calendar {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(52, 132);
+			this->textBox3->Location = System::Drawing::Point(54, 132);
+			this->textBox3->MaxLength = 15;
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(180, 20);
 			this->textBox3->TabIndex = 5;
+			this->textBox3->UseSystemPasswordChar = true;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(50, 169);
+			this->button1->Location = System::Drawing::Point(52, 169);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 6;
 			this->button1->Text = L"Register";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &registration_form::button1_Click);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(157, 169);
+			this->button2->Location = System::Drawing::Point(159, 169);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 23);
 			this->button2->TabIndex = 7;
 			this->button2->Text = L"Cancel";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &registration_form::button2_Click);
 			// 
 			// registration_form
 			// 
@@ -146,12 +159,42 @@ namespace Calendar {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"registration_form";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Registration";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+			 String^tbstr=textBox1->Text;
+			 String^tbstr2=textBox2->Text;
+			 String^tbstr3=textBox3->Text;
+
+			 char*name=(char*)Marshal::StringToHGlobalAnsi(tbstr).ToPointer();
+			 char*pass=(char*)Marshal::StringToHGlobalAnsi(tbstr2).ToPointer();
+			 char*pass2=(char*)Marshal::StringToHGlobalAnsi(tbstr3).ToPointer();
+
+			 if(strcmp(pass, pass2) == 0){
+			 char buff[31];
+			 strcpy (buff,name);
+			 strcat (buff,pass);
+			 ofstream fout;
+			 fout.open("data.txt", ios::app);
+			 fout << "\n";
+			 fout << buff;
+			 MessageBox::Show("Registration Success!");
+			 Close();
+			 }
+			  else
+			 {
+				 MessageBox::Show("Password mismatch, please try again!","Error");
+			 }
+		 }
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Close();
+		 }
+};
 }

@@ -14,6 +14,7 @@
     <ProjectGuid>{F6CEDA99-F6AC-4CEB-9E78-483F7B9BB46B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Week</RootNamespace>
+    <ProjectName>Weeks</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -72,10 +73,11 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WeekClass.cpp" />
+    <ClCompile Include="WeeksClass.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Week.h" />
+    <ClInclude Include="CalendarCore.h" />
+    <ClInclude Include="Weeks.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

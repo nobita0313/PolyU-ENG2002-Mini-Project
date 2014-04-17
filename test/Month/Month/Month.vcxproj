@@ -76,6 +76,7 @@
     <ClCompile Include="MonthsClass.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CalendarCore.h" />
     <ClInclude Include="Months.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

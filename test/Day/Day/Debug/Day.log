@@ -1,4 +1,4 @@
-﻿Build started 3/25/2014 10:45:27 PM.
+﻿Build started 4/17/2014 2:17:12 PM.
      1>Project "T:\workspace\Visual Studio\C++\PolyU-ENG2002-Mini-Project\test\Day\Day\Day.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Days.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -15,4 +15,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.26
+Time Elapsed 00:00:09.20

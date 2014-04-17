@@ -36,6 +36,9 @@
     <ClCompile Include="Calendar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CalendarCore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -59,6 +62,12 @@
     <ClInclude Include="Months.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Weeks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CalendarCore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -77,10 +86,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="Days.lib">
+    <Library Include="Months.lib">
       <Filter>Source Files</Filter>
     </Library>
-    <Library Include="Months.lib">
+    <Library Include="Weeks.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="Days.lib">
       <Filter>Source Files</Filter>
     </Library>
   </ItemGroup>

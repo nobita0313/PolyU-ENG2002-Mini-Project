@@ -1,4 +1,6 @@
 #include "Months.h"
+#include "CalendarCore.h"
+
 Months::Months(){
 }
 Months::~Months(){
@@ -6,7 +8,7 @@ Months::~Months(){
 void Months::SetYM(int year, int month){
 	itsYear = year;
 	itsMonth = month;
-	itsMaxDay = maxDay(year, month);
+	itsMaxDay = getDaysInMonth(year, month);
 }
 int Months::GetYear(){
 	return itsYear;

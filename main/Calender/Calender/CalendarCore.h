@@ -1,0 +1,17 @@
+void decMonth(int * year, int * month);
+void incMonth(int * year, int * month);
+void decWeek(int * year, int * week);
+void incWeek(int * year, int * week);
+void decDay(int *year, int *month, int *day);
+void incDay(int *year, int *month, int *day);
+bool isLeapYear(int year);
+int getDaysInYear(int year);
+int getNoOfWeeksInYear(int year);
+void getDayAndMonthFromWeekInYear(int *year, int weekInYear, int *month, int *dayInMonth);
+int getDaysInMonth(int year, int month);
+int getDayOfTheWeek(int year, int month, int day);
+int getWeekInYearFromDate(int year, int month, int day);
+int getDayInYearFromDayAndMonth(int year, int month, int day);
+void getDayAndMonthFromDayInYear(int year, int dayInYear, int *month, int *dayInMonth);
+int fDayCorrection(int x);
+bool isInteger(char * c);

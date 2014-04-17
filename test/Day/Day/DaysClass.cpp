@@ -1,4 +1,6 @@
 #include "Days.h"
+#include "CalendarCore.h"
+
 Days::Days(){
 }
 
@@ -6,21 +8,8 @@ Days::~Days(){
 }
 
 void Days::SetYMD(int y, int m, int d){
-    itsDayOfWeek = dayOfWeek(y, m, d);
-	firstDayOfWeek = dayOfWeek(y, m, 1);
-
-	int dow, dowJan1;
-	int julian = 0;
-	for(int i=1; i<m; i++){
-		julian += maxDay(y, i);
-	}
-	julian += d;  // Jan 1 = 1, Jan 2 = 2, etc...
-	dow = itsDayOfWeek;     // Sun = 0, Mon = 1, etc...
-	dowJan1 = dayOfWeek(y, 1 ,1);   // find out first of year's day
-	itsWeekNo = ((julian + 6) / 7);   // probably better.  CHECK THIS LINE. (See comments.)
-	if (dow < dowJan1) {                // adjust for being after Saturday of week #1
-		++itsWeekNo;
-	}
+    itsDayOfWeek = getDayOfTheWeek(y, m, d);
+	firstDayOfWeek = getDayOfTheWeek(y, m, 1);
 
 	itsDay = d;
 
@@ -52,10 +41,6 @@ void Days::SetStartDay(int fday){
 
 int Days::GetDay(){
 	return itsDay;
-}
-
-int Days::GetWeekNo(){
-	return itsWeekNo;
 }
 
 int Days::GetDayOfWeek(){

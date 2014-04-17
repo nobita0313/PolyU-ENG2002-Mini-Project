@@ -1,0 +1,18 @@
+﻿Build started 4/17/2014 2:24:21 PM.
+     1>Project "T:\workspace\Visual Studio\C++\PolyU-ENG2002-Mini-Project\test\Week\Week\Week.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\Weeks.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt WeeksClass.cpp
+         WeeksClass.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"T:\workspace\Visual Studio\C++\PolyU-ENG2002-Mini-Project\test\Week\Debug\Weeks.lib" /NOLOGO Debug\WeeksClass.obj
+         Week.vcxproj -> T:\workspace\Visual Studio\C++\PolyU-ENG2002-Mini-Project\test\Week\Debug\Weeks.lib
+       FinalizeBuildStatus:
+         Deleting file "Debug\Weeks.unsuccessfulbuild".
+         Touching "Debug\Weeks.lastbuildstate".
+     1>Done Building Project "T:\workspace\Visual Studio\C++\PolyU-ENG2002-Mini-Project\test\Week\Week\Week.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.34

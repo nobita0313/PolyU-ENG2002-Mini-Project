@@ -18,12 +18,15 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WeekClass.cpp">
+    <ClCompile Include="WeeksClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Week.h">
+    <ClInclude Include="Weeks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CalendarCore.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

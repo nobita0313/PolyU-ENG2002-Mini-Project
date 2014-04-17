@@ -59,7 +59,6 @@
       </AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
-      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -90,6 +89,9 @@
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Calendar.cpp" />
+    <ClCompile Include="CalendarCore.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="login_form.cpp" />
     <ClCompile Include="registration_form.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -98,6 +100,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CalendarCore.h" />
     <ClInclude Include="Days.h" />
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
@@ -111,6 +114,7 @@
     </ClInclude>
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Weeks.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
@@ -130,6 +134,7 @@
   <ItemGroup>
     <Library Include="Days.lib" />
     <Library Include="Months.lib" />
+    <Library Include="Weeks.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

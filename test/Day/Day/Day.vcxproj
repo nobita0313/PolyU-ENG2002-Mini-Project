@@ -76,6 +76,7 @@
     <ClCompile Include="DaysClass.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CalendarCore.h" />
     <ClInclude Include="Days.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
