@@ -27,6 +27,7 @@ namespace Calendar {
 			//TODO: Add the constructor code here
 			//
 			loginFlag = false;
+			this->AcceptButton = button1;
 		}
 
 	protected:

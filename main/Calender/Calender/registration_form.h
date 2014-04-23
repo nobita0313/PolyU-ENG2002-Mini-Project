@@ -21,11 +21,12 @@ namespace Calendar {
 	public:
 		registration_form(System::Windows::Forms::Form ^ Form)
 		{
-			LForm = Form;
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			LForm = Form;
+			this->AcceptButton = button1;
 		}
 
 	protected:
