@@ -14,7 +14,7 @@
     <ProjectGuid>{F66A3E49-1952-4879-BFC8-30911421633E}</ProjectGuid>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
-    <RootNamespace>Calender</RootNamespace>
+    <RootNamespace>Calendar</RootNamespace>
     <ProjectName>Calendar</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -59,6 +59,7 @@
       </AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -80,10 +81,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.ico" />
+    <None Include="C:\Users\Nelson Chan\Desktop\Calendar_logo.ico" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -92,8 +95,13 @@
     <ClCompile Include="CalendarCore.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="EventCore.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="event_form.cpp" />
     <ClCompile Include="login_form.cpp" />
     <ClCompile Include="registration_form.cpp" />
+    <ClCompile Include="stat_form.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -102,6 +110,11 @@
   <ItemGroup>
     <ClInclude Include="CalendarCore.h" />
     <ClInclude Include="Days.h" />
+    <ClInclude Include="Event.h" />
+    <ClInclude Include="EventCore.h" />
+    <ClInclude Include="event_form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -113,6 +126,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="stat_form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Weeks.h" />
   </ItemGroup>
@@ -120,6 +136,9 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="event_form.resx">
+      <DependentUpon>event_form.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resX">
       <DependentUpon>Form1.h</DependentUpon>
       <SubType>Designer</SubType>
@@ -130,9 +149,13 @@
     <EmbeddedResource Include="registration_form.resx">
       <DependentUpon>registration_form.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="stat_form.resx">
+      <DependentUpon>stat_form.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Days.lib" />
+    <Library Include="Event.lib" />
     <Library Include="Months.lib" />
     <Library Include="Weeks.lib" />
   </ItemGroup>
